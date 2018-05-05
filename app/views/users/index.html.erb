@@ -1,0 +1,20 @@
+<h1>User Registration</h1>
+<p>Register here:</p>
+
+<%= form_with url: "/users/register", method: :post, local: true do |f| %> <br/>
+
+<%= f.text_field :full_name, id: :full_name, param_key: :full_name, :value => params[:full_name],:placeholder => "Name"%><br/><br/>
+<%= f.text_field :street_address, id: :street_address, param_key: :street_address, :value => params[:street_address],:placeholder => "Street Address"%><br/>
+<%= f.text_field :city, id: :city, param_key: :city, :value => params[:city],:placeholder => "City"%>
+<%= f.text_field :state, id: :state, param_key: :state, :value => params[:state],:placeholder => "State"%><br/>
+<%= f.number_field :zip, id: :zip, param_key: :zip, :value => params[:zip],:placeholder => "Zip"%>
+<%= f.text_field :country, id: :country, param_key: :country, :value => params[:country],:placeholder => "Country"%><br/><br/>
+<%= f.text_field :email, id: :email, param_key: :email, :value => params[:email],:placeholder => "Email Address", :required => true%> <br/><br/>
+<%= f.text_field :user_name, id: :user_name, param_key: :user_name, :value => params[:user_name],:placeholder => "User Name", :required => true%>
+<%= f.password_field :pw, id: :pw, :value => params[:pw], :placeholder => "Password", :required => true%><br/><br/>
+<br/>
+<input type="tel" name="phone[a]">
+<input type="tel" name="phone[b]">
+<input type="tel" name="phone[c]">
+<%= submit_tag "Register"%>
+<% end %>
